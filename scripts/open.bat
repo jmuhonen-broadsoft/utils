@@ -1,3 +1,3 @@
 @echo off
-@call python source/open.py %*
+@call python %~dp0source/open.py %*
 @echo on

@@ -9,7 +9,7 @@ if %1 == stash	goto stash
 goto end
 
 :stash
-@call python source/gitk_stash.py %*
+@call python %~dp0source/gitk_stash.py %*
 goto end
 
 :end

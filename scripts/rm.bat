@@ -1,3 +1,3 @@
 @echo off
-@call python source/call.py del %*
+@call python %~dp0source/call.py del %*
 @echo on

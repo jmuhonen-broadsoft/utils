@@ -8,8 +8,7 @@ SET _qt=%1%
 SHIFT
 SET _ver=%1%
 SHIFT
-SET _=%1%
-SET _path=%path%
+:SET _path=%path%
 IF /I "%_qt%" == "qt5" ( goto qt5 ) ELSE IF /I "%_qt%" == "qt4" ( goto qt4 ) ELSE ( goto end )
 
 :qt5
@@ -31,7 +30,7 @@ SHIFT
 goto collect_args
 :args_collected
 cmake .. %args% -DPROJECT_NAME=btbc%_ver%%_qt% -DUSE_QT5=%_qt5%
-SET path=%_path%
+:SET path=%_path%
 goto end
 :cmake_dot_dot
 cmake ..
