@@ -14,13 +14,13 @@ IF /I "%_qt%" == "qt5" ( goto qt5 ) ELSE IF /I "%_qt%" == "qt4" ( goto qt4 ) ELS
 
 :qt5
 SET _qt5=1
-IF %_ver% GEQ 210 ( SET _qt5loc=C:\Qt\5.3.0\5.3\msvc2013\ ) ELSE ( SET _qt5loc=C:\Qt\5.3.0\5.3\msvc2010_opengl\ )
+:IF %_ver% GEQ 210 ( SET _qt5loc=C:\Qt\5.3.0\5.3\msvc2013\ ) ELSE ( SET _qt5loc=C:\Qt\5.3.0\5.3\msvc2010_opengl\ )
 :SET Qt5_DIR=%_qt5loc%
-SET path=%path%;%_qt5loc%bin\;
+:SET path=%path%;%_qt5loc%bin\;
 goto cmake
 :qt4
 SET _qt5=0
-SET path=%path%;C:\Qt\4.8.4\bin;
+:SET path=%path%;C:\Qt\4.8.4\bin;
 goto cmake
 
 :cmake

@@ -1,5 +1,8 @@
 @echo off
 
+if exist c:\Users\jmuhonen ( set ____root=c:\Users\jmuhonen ) else if exist c:\Users\Jussi    ( set ____root=c:\Users\Jussi )
+if %____root% == "" goto end
+
 if %1 == work		goto work
 if %1 == down		goto downloads
 if %1 == Down		goto downloads
@@ -27,18 +30,19 @@ goto end
 
 :downloads
 title Downloads
-call cd C:\Users\jmuhonen\Downloads\
+call cd %____root%\Downloads\
 goto end
 
 :desktop
 title Desktop
-call cd C:\Users\jmuhonen\Desktop\
+call cd %____root%\Desktop\
 goto end
 
 :scripts
 title scripts
-call cd C:\Users\jmuhonen\utils\scripts\
+call cd %____root%\utils\scripts\
 goto end
 
 :end
+set ____root=
 @echo on
